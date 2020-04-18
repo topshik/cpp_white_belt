@@ -9,7 +9,6 @@ int main() {
 
     std::cin >> q;
     curr_month = 0;
-    prev_days_num = 31;
     curr_days_num = 31;
     for (size_t i = 0; i != q; ++i) {
         std::cin >> curr_command;
@@ -27,8 +26,7 @@ int main() {
             if (curr_month == 11) {
                 curr_month = 0;
                 prev_days_num = 31;
-            }
-            else {
+            } else {
                 ++curr_month;
                 prev_days_num = curr_days_num;
                 curr_days_num = months_days_num[curr_month];
