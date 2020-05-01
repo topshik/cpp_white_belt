@@ -31,7 +31,7 @@ private:
     std::map<int, std::string> first_names;
     std::map<int, std::string> last_names;
 
-    static std::string GetNameByHist(int year, const std::map<int, std::string>& hist) {
+    std::string GetNameByHist(int year, const std::map<int, std::string>& hist) {
         if (year < (*hist.begin()).first) return "";
 
         std::string res_name = (*hist.begin()).second;

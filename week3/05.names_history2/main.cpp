@@ -65,7 +65,7 @@ private:
     std::map<int, std::string> first_names;
     std::map<int, std::string> last_names;
 
-    static bool CheckHistNeeded(const std::vector<std::string>& hist) {
+    bool CheckHistNeeded(const std::vector<std::string>& hist) {
         const auto name = hist.rbegin();
         if (hist.size() <= 1) {
             return false;
@@ -78,7 +78,7 @@ private:
         return false;
     }
 
-    static std::string GetNameByHist(int year, const std::map<int, std::string>& hist) {
+    std::string GetNameByHist(int year, const std::map<int, std::string>& hist) {
         if (year < (*hist.begin()).first) return "";
 
         std::string res_name = (*hist.begin()).second;
@@ -90,7 +90,7 @@ private:
         return res_name;
     }
 
-    static std::vector<std::string> GetNameHistByHist(int year, const std::map<int, std::string>& hist) {
+    std::vector<std::string> GetNameHistByHist(int year, const std::map<int, std::string>& hist) {
         std::vector<std::string> res;
         for (const auto& [hist_year, hist_name] : hist) {
             if (hist_year <= year) {
@@ -100,7 +100,7 @@ private:
         return res;
     }
 
-    static std::string PrintHist(std::string last_name, const std::vector<std::string>& hist) {
+    std::string PrintHist(std::string last_name, const std::vector<std::string>& hist) {
         std::string res = " (";
         for (auto it = ++hist.rbegin(); it != --hist.rend(); ++it) {
             if (last_name != *it) {
