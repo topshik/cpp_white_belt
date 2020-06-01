@@ -14,6 +14,8 @@ public:
             return last_fetched_time;
         } catch (std::system_error& system_error_ex) {
             return last_fetched_time;
+        } catch (std::exception& e) {
+            throw e;
         }
     }
 private:
